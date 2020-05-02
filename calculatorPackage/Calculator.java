@@ -18,8 +18,8 @@ public class Calculator {
             Scanner scan = new Scanner(System.in);
             FileInputStream in = new FileInputStream("Commands.properties");
             properties.load(in);
-            try {
-                while (scan.hasNextLine()) {
+            while (scan.hasNextLine()) {
+                try {
                     String line = scan.nextLine();
                     Scanner scan_line = new Scanner(line);
                     String command = scan_line.next();
@@ -32,9 +32,9 @@ public class Calculator {
                         operate_map.put(command, operation);
                     }
                     operation.Operation(stack, line);
+                } catch (ClassNotFoundException | InstantiationException | InvocationTargetException | IllegalAccessException | NoSuchMethodException e) {
+                    e.printStackTrace();
                 }
-            } catch (ClassNotFoundException | InstantiationException | InvocationTargetException | IllegalAccessException | NoSuchMethodException e) {
-                e.printStackTrace();
             }
         } catch (IOException e) {
             e.printStackTrace();

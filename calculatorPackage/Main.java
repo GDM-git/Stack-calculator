@@ -1,8 +1,10 @@
 package calculatorPackage;
 
+import java.io.IOException;
+
 public class Main {
-    public static void main(String[] args) {
-        String str = new String("calculate.txt");
+    public static void main(String[] args) throws IOException {
+//        String str = new String("calculate.txt");
         Calculator calc = new Calculator();
     }
 }
